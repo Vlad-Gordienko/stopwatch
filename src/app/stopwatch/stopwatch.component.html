@@ -1,0 +1,4 @@
+<h1>{{ time | date : 'HH:mm:ss:SSS' }}</h1>
+<button (click)="start()" [disabled]="isRun">Start</button>
+<button (click)="stop()" [disabled]="!isRun">Stop</button>
+<button (click)="clear()">Clear</button>
