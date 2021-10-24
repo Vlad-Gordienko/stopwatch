@@ -1,4 +1,23 @@
-<h1>{{ time | date : 'HH:mm:ss:SSS' }}</h1>
-<button (click)="start()" [disabled]="isRun">Start</button>
-<button (click)="stop()" [disabled]="!isRun">Stop</button>
-<button (click)="clear()">Clear</button>
+<mat-card class="stopwatch">
+  <h1>{{ time | date : 'HH:mm:ss:SSS' }}</h1>
+
+  <button mat-button
+          color="primary"
+          (click)="start()"
+          [disabled]="isRun">
+    <mat-icon>play_arrow</mat-icon>
+  </button>
+
+  <button mat-button
+          color="primary"
+          (click)="pause()"
+          [disabled]="!isRun">
+    <mat-icon>pause</mat-icon>
+  </button>
+
+  <button mat-button
+          color="primary"
+          (click)="stop()">
+    <mat-icon>stop</mat-icon>
+  </button>
+</mat-card>

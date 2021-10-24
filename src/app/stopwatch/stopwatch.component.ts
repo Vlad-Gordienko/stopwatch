@@ -23,7 +23,6 @@ export class StopwatchComponent implements OnInit, OnDestroy {
 
   public start(): void {
     this.isRun = true;
-
     this.intervalSubscriber.unsubscribe();
     this.intervalSubscriber = interval(this.intervalStep)
       .subscribe(() => {
@@ -32,12 +31,14 @@ export class StopwatchComponent implements OnInit, OnDestroy {
       });
   }
 
-  public stop(): void {
+  public pause(): void {
     this.intervalSubscriber.unsubscribe();
     this.isRun = false;
   }
 
-  public clear(): void {
+  public stop(): void {
+    this.intervalSubscriber.unsubscribe();
     this.time = new Date(1970, 0,1);
+    this.isRun = false;
   }
 }
